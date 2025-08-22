@@ -1,0 +1,60 @@
+/* Import clean modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  background: #121212;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 40px;
+  margin: 0;
+}
+
+/* Search input */
+input {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #2a2a2a;
+  outline: none;
+  background: #1c1c1c;
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+input:focus {
+  border-color: #2421d6;
+  background: #222;
+}
+
+/* Results container */
+#results {
+  margin-top: 30px;
+  text-align: left;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Each result item */
+#results div {
+  padding: 14px;
+  border-bottom: 1px solid #2a2a2a;
+  transition: background 0.2s ease;
+}
+
+#results div:hover {
+  background: #1a1a1a;
+}
+
+/* Links */
+#results a {
+  color: #4cc9f0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#results a:hover {
+  color: #72e1ff;
+}

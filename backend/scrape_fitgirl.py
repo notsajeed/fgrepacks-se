@@ -65,7 +65,6 @@ def save_progress():
     print(f"💾 Progress saved ({len(games)} games).")
 
 def main():
-    # --- Resume from previous progress ---
     start_page = 1
     if os.path.exists(SAVE_PATH):
         with open(SAVE_PATH, "r", encoding="utf-8") as f:
@@ -85,10 +84,8 @@ def main():
             print(f"⚠️ Stopped at page {i}")
             break
 
-        # Sleep 1–3 seconds randomly
         time.sleep(random.uniform(1, 3))
 
-        # Save progress every 50 pages
         if i % 50 == 0:
             save_progress()
 

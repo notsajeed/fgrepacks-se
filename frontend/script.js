@@ -5,15 +5,17 @@ const resultsDiv = document.getElementById("results");
 async function searchGames(query) {
   if (!query) return [];
 
-  const res = await fetch("http://127.0.0.1:7700/indexes/games/search", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ q: query })
-  });
-
-  const data = await res.json();
-  return data.hits;
+  try {
+    const res = await fetch(`http://127.0.0.1:5000/api/find/${encodeURIComponent(query)}`);
+    if (!res.ok) throw new Error("Network error");
+    const data = await res.json();
+    return data.results || [];
+  } catch (err) {
+    console.error("Error fetching game:", err);
+    return [];
+  }
 }
+
 
 searchBox.addEventListener("input", async (e) => {
   const query = e.target.value.trim();

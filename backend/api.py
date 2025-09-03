@@ -8,7 +8,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["https://fgrepacks-se.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,4 +35,4 @@ def find_game(query: str):
         if "aliases" in game and any(q in alias.lower() for alias in game["aliases"]):
             results.append(game)
 
-    return {"results": results[:10]}  # return top 10 matches
+    return {"results": results[:10]}  

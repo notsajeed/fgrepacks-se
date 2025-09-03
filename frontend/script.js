@@ -1,12 +1,13 @@
 const searchBox = document.getElementById("searchBox");
 const resultsDiv = document.getElementById("results");
 
-// Query Meilisearch
+const API_URL = "https://fgrepacks.onrender.com";
+
 async function searchGames(query) {
   if (!query) return [];
 
   try {
-    const res = await fetch(`http://127.0.0.1:5000/api/find/${encodeURIComponent(query)}`);
+    const res = await fetch(`${API_URL}/api/find/${encodeURIComponent(query)}`);
     if (!res.ok) throw new Error("Network error");
     const data = await res.json();
     return data.results || [];
@@ -15,6 +16,7 @@ async function searchGames(query) {
     return [];
   }
 }
+
 
 
 searchBox.addEventListener("input", async (e) => {

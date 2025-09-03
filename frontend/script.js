@@ -1,7 +1,7 @@
 const searchBox = document.getElementById("searchBox");
 const resultsDiv = document.getElementById("results");
 
-const API_URL = "https://fgrepacks.onrender.com";
+const API_URL = "https://fgrepacks-se.onrender.com";
 
 async function searchGames(query) {
   if (!query) return [];
